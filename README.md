@@ -4,6 +4,9 @@
 
 An intelligent learning analytics system that identifies student skill gaps and provides personalized recommendations using **Gaussian Mixture Models (GMM)** for clustering and **Matrix Factorization (MF)** for collaborative filtering.
 
+### 🌐 Live Demo
+> **[Skill Gap Awareness Dashboard](https://spiritsfuse-adv-ml-project.streamlit.app/)** - Try the interactive application!
+
 ---
 
 ## 📋 Table of Contents
@@ -165,6 +168,7 @@ drive.mount('/content/drive')
 ### Step 4: Run All Cells
 
 Execute all notebook cells sequentially to:
+
 1. Load and preprocess OULAD data
 2. Engineer behavioral features
 3. Train GMM clustering model
@@ -195,16 +199,16 @@ print(f"🌐 Dashboard URL: {public_url}")
 
 ## 📦 Dependencies
 
-| Package      | Purpose                        |
-| ------------ | ------------------------------ |
-| pandas       | Data manipulation              |
-| numpy        | Numerical computing            |
-| scikit-learn | ML algorithms (GMM, NMF)       |
-| scipy        | Scientific computing           |
-| matplotlib   | Static visualizations          |
-| seaborn      | Statistical plots              |
-| plotly       | Interactive charts             |
-| streamlit    | Dashboard web application      |
+| Package      | Purpose                   |
+| ------------ | ------------------------- |
+| pandas       | Data manipulation         |
+| numpy        | Numerical computing       |
+| scikit-learn | ML algorithms (GMM, NMF)  |
+| scipy        | Scientific computing      |
+| matplotlib   | Static visualizations     |
+| seaborn      | Statistical plots         |
+| plotly       | Interactive charts        |
+| streamlit    | Dashboard web application |
 
 Full list available in `requirements.txt`
 
@@ -213,16 +217,19 @@ Full list available in `requirements.txt`
 ## 🧠 Model Architecture
 
 ### Phase 1: Data Preprocessing
+
 - Join 7 OULAD tables into unified student records
 - Handle missing values and outliers
 - Create temporal features (weekly engagement patterns)
 
 ### Phase 2: Feature Engineering
+
 - **Engagement Features**: clicks/week, active days, consistency score
 - **Performance Features**: assessment scores, late submissions
 - **Behavioral Features**: recency, burstiness, session patterns
 
 ### Phase 3: Student Clustering (GMM)
+
 - Gaussian Mixture Model with 5 components
 - **Student Archetypes:**
   1. 🌟 **High Performer** - Strong engagement & scores
@@ -232,11 +239,13 @@ Full list available in `requirements.txt`
   5. ⚠️ **Disengaged At-Risk** - Critical attention required
 
 ### Phase 4: Collaborative Filtering (MF)
+
 - Non-negative Matrix Factorization (NMF)
 - User-Item interaction matrix from VLE clicks
 - Top Performer Wisdom for recommendation reranking
 
 ### Phase 5: Recommendation Engine
+
 - Skill gap = Success Template - Current Engagement
 - Priority scoring based on:
   - Gap magnitude
@@ -276,4 +285,4 @@ This project is for educational purposes as part of the Advanced Machine Learnin
 
 ---
 
-*Last Updated: January 2026*
+_Last Updated: January 2026_
