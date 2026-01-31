@@ -1,0 +1,77 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         SKILL GAP AWARENESS SYSTEM                           ║
+║                      Advanced Machine Learning Project                       ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  Team: Team पंचतत्व 2.0                                                        ║
+║  Course: Advanced Machine Learning                                           ║
+║  Date: January 2026                                                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+TEAM MEMBERS
+────────────────────────────────────────────────────────────────────────────────
+  • Dhruv Sharma (Team Leader) - dhruv.24bcs10294@sst.scaler.com
+  • Yashwardhan Singh
+  • Kartavya Panchal
+  • Ojas Maheshwari
+  • Tushar Shaw
+
+════════════════════════════════════════════════════════════════════════════════
+                              🔗 QUICK LINKS
+════════════════════════════════════════════════════════════════════════════════
+
+📊 LIVE DASHBOARD (Streamlit Cloud)
+    https://spiritsfuse-adv-ml-project.streamlit.app
+
+📓 GOOGLE COLAB NOTEBOOK (Run Code Instantly)
+    https://colab.research.google.com/github/Spiritsfuse/Adv_ML_Project/blob/main/model.ipynb
+
+💻 GITHUB REPOSITORY (Source Code)
+    https://github.com/Spiritsfuse/Adv_ML_Project
+
+📁 DATASET (Google Drive)
+    https://drive.google.com/drive/folders/1A5E-4H31m6Yx3Ld3QXVfR0Mxt1OiV1_2?usp=sharing
+
+════════════════════════════════════════════════════════════════════════════════
+                           📦 FOLDER CONTENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Team पंचतत्व 2.0 AML Project/
+│
+├── 📁 AML-Project_OULAD_dataset/
+│       Raw OULAD dataset files (CSV format)
+│
+├── 📦 dhruv.24bcs10294@sst.scaler.com.zip
+│       Complete project code including:
+│       - app.py (Streamlit dashboard)
+│       - model.ipynb (Jupyter notebook with ML pipeline)
+│       - requirements.txt (Python dependencies)
+│       - README.md (Setup instructions)
+│       - cleaned_data/ (Processed data and model artifacts)
+│
+├── 📄 AML Project Report.pdf
+│       Comprehensive project report with methodology,
+│       results, and recommendations
+│
+└── 📄 QUICK_LINKS.txt
+        This file - quick reference links
+
+════════════════════════════════════════════════════════════════════════════════
+                           🚀 HOW TO RUN
+════════════════════════════════════════════════════════════════════════════════
+
+OPTION 1: View Live Dashboard (No Setup Required)
+    → Open: https://spiritsfuse-adv-ml-project.streamlit.app
+
+OPTION 2: Run Notebook in Google Colab (No Setup Required)
+    → Open: https://colab.research.google.com/github/Spiritsfuse/Adv_ML_Project/blob/main/model.ipynb
+    → Click "Run All" to execute all cells
+
+OPTION 3: Run Locally
+    1. Extract dhruv.24bcs10294@sst.scaler.com.zip
+    2. Install dependencies: pip install -r requirements.txt
+    3. Run dashboard: streamlit run app.py
+
+════════════════════════════════════════════════════════════════════════════════
+                              Thank You!
+                         Team पंचतत्व 2.0 🙏
+════════════════════════════════════════════════════════════════════════════════

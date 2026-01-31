@@ -1,8 +1,10 @@
 # Skill Gap Awareness System
+
 ## Advanced Machine Learning Project Report
 
 ---
 
+**Team:** Team पंचतत्व 2.0  
 **Course:** Advanced Machine Learning  
 **Team Leader:** Dhruv Sharma  
 **Team Members:** Yashwardhan Singh | Kartavya Panchal | Ojas Maheshwari | Tushar Shaw  
@@ -12,10 +14,11 @@
 
 ## 🌐 Project Links
 
-| Resource | Link |
-|----------|------|
-| **Live Dashboard** | [https://spiritsfuse-adv-ml-project.streamlit.app](https://spiritsfuse-adv-ml-project.streamlit.app/) |
-| **GitHub Repository** | [https://github.com/Spiritsfuse/Adv_ML_Project](https://github.com/Spiritsfuse/Adv_ML_Project) |
+| Resource                   | Link                                                                                                              |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Live Dashboard**         | [https://spiritsfuse-adv-ml-project.streamlit.app](https://spiritsfuse-adv-ml-project.streamlit.app/)             |
+| **GitHub Repository**      | [https://github.com/Spiritsfuse/Adv_ML_Project](https://github.com/Spiritsfuse/Adv_ML_Project)                    |
+| **Google Colab Notebook**  | [Open in Colab](https://colab.research.google.com/github/Spiritsfuse/Adv_ML_Project/blob/main/model.ipynb)        |
 | **Dataset (Google Drive)** | [AML-Project_OULAD_dataset](https://drive.google.com/drive/folders/1A5E-4H31m6Yx3Ld3QXVfR0Mxt1OiV1_2?usp=sharing) |
 
 ---
@@ -33,6 +36,7 @@ Unlike traditional classrooms where teachers can observe struggling students and
 ## 1.2 The Scale of the Problem
 
 With the exponential growth of online education:
+
 - **40% of online students** fail to complete their courses
 - **60% of at-risk students** could be identified early through behavioral patterns
 - Yet, **less than 10%** of institutions provide personalized intervention systems
@@ -41,7 +45,7 @@ With the exponential growth of online education:
 
 We set out to answer a fundamental question:
 
-> *"Can we identify what separates successful online learners from struggling ones, and use that knowledge to guide every student toward success?"*
+> _"Can we identify what separates successful online learners from struggling ones, and use that knowledge to guide every student toward success?"_
 
 This project transforms raw learning analytics into **personalized, explainable recommendations** that tell each student exactly what they need to do differently.
 
@@ -57,17 +61,17 @@ For **institutions**: Improved completion rates and learning outcomes
 
 ## 2.1 The Open University Learning Analytics Dataset (OULAD)
 
-We chose the OULAD dataset—one of the largest publicly available educational datasets—because it captures the complete learning journey of real students in a real institution.
+We chose the OULAD dataset - one of the largest publicly available educational datasets - because it captures the complete learning journey of real students in a real institution.
 
 ### Dataset Statistics
 
-| Metric | Value |
-|--------|-------|
-| Total Students | 32,593 |
-| Courses (Modules) | 22 |
-| Assessment Records | 173,912 |
-| VLE Interactions | 10,655,280 |
-| Time Period | 2013-2014 |
+| Metric             | Value      |
+| ------------------ | ---------- |
+| Total Students     | 32,593     |
+| Courses (Modules)  | 22         |
+| Assessment Records | 173,912    |
+| VLE Interactions   | 10,655,280 |
+| Time Period        | 2013-2014  |
 
 ## 2.2 Data Structure
 
@@ -95,13 +99,16 @@ The dataset consists of seven interconnected tables:
 ## 2.3 Key Variables
 
 **Student Outcomes:**
+
 - `final_result`: Pass, Fail, Withdrawn, Distinction
 
 **Engagement Metrics:**
+
 - `sum_click`: Total clicks on resources
 - `date`: Day of interaction (relative to course start)
 
 **Resource Types (20 categories):**
+
 - `quiz`, `forumng`, `oucontent`, `resource`, `subpage`, `homepage`, etc.
 
 ## 2.4 Data Challenges
@@ -132,15 +139,16 @@ Stage 1: WHO is the student?          Stage 2: WHAT should they do?
 
 We evaluated multiple clustering approaches:
 
-| Algorithm | Pros | Cons | Our Choice |
-|-----------|------|------|------------|
-| K-Means | Fast, simple | Hard assignments | ❌ |
-| **GMM** | **Soft assignments, probabilistic** | **More parameters** | **✅ Selected** |
-| DBSCAN | No k required | Sensitive to density | ❌ |
-| Hierarchical | Dendrogram insights | Scalability issues | ❌ |
+| Algorithm    | Pros                                | Cons                 | Our Choice      |
+| ------------ | ----------------------------------- | -------------------- | --------------- |
+| K-Means      | Fast, simple                        | Hard assignments     | ❌              |
+| **GMM**      | **Soft assignments, probabilistic** | **More parameters**  | **✅ Selected** |
+| DBSCAN       | No k required                       | Sensitive to density | ❌              |
+| Hierarchical | Dendrogram insights                 | Scalability issues   | ❌              |
 
 **GMM was chosen because:**
-1. Students exist on a spectrum—they can partially belong to multiple archetypes
+
+1. Students exist on a spectrum - they can partially belong to multiple archetypes
 2. Probabilistic memberships enable nuanced recommendations
 3. Better handles overlapping behavioral patterns
 
@@ -149,16 +157,19 @@ We evaluated multiple clustering approaches:
 We engineered 15+ features capturing different dimensions of student behavior:
 
 ### Engagement Features
+
 - `total_clicks`: Overall platform engagement
 - `active_days`: Consistency of participation
 - `clicks_per_day`: Intensity of study sessions
 
 ### Performance Features
+
 - `avg_score`: Mean assessment score
 - `late_submissions`: Deadline adherence
 - `score_improvement`: Learning trajectory
 
 ### Behavioral Features
+
 - `quiz_ratio`: Time spent on self-assessment
 - `forum_ratio`: Community participation
 - `content_ratio`: Material consumption patterns
@@ -167,13 +178,13 @@ We engineered 15+ features capturing different dimensions of student behavior:
 
 Our GMM identified five distinct learner profiles:
 
-| Archetype | Description | Success Rate |
-|-----------|-------------|--------------|
-| 🌟 **High Performer** | Strong engagement, excellent scores | 92% |
-| ⚡ **Talented but Inconsistent** | High potential, irregular patterns | 68% |
-| 📚 **Moderate Performer** | Average across all metrics | 55% |
-| 🔧 **Early Struggler** | Low early engagement, recoverable | 35% |
-| ⚠️ **Disengaged At-Risk** | Minimal activity, critical risk | 12% |
+| Archetype                        | Description                         | Success Rate |
+| -------------------------------- | ----------------------------------- | ------------ |
+| 🌟 **High Performer**            | Strong engagement, excellent scores | 92%          |
+| ⚡ **Talented but Inconsistent** | High potential, irregular patterns  | 68%          |
+| 📚 **Moderate Performer**        | Average across all metrics          | 55%          |
+| 🔧 **Early Struggler**           | Low early engagement, recoverable   | 35%          |
+| ⚠️ **Disengaged At-Risk**        | Minimal activity, critical risk     | 12%          |
 
 ## 3.5 Recommendation Engine: Matrix Factorization
 
@@ -221,13 +232,13 @@ This ensures recommendations are aligned with **proven success patterns**.
 
 We used the elbow method and silhouette analysis:
 
-| Clusters (k) | Silhouette Score | BIC |
-|--------------|------------------|-----|
-| 3 | 0.38 | -125,432 |
-| 4 | 0.42 | -118,965 |
-| **5** | **0.45** | **-112,847** |
-| 6 | 0.43 | -115,234 |
-| 7 | 0.39 | -119,876 |
+| Clusters (k) | Silhouette Score | BIC          |
+| ------------ | ---------------- | ------------ |
+| 3            | 0.38             | -125,432     |
+| 4            | 0.42             | -118,965     |
+| **5**        | **0.45**         | **-112,847** |
+| 6            | 0.43             | -115,234     |
+| 7            | 0.39             | -119,876     |
 
 **k=5 achieved the best balance** between cluster coherence and interpretability.
 
@@ -243,11 +254,11 @@ Disengaged At-Risk    ████░░░░░░░░░░░░░░░�
 
 ## 4.3 Recommendation Quality
 
-| Metric | Value | Interpretation |
-|--------|-------|----------------|
-| Coverage | 95.2% | Recommendations available for nearly all students |
-| Diversity | 0.78 | Good variety in recommendations |
-| Archetype Alignment | 87.3% | Recommendations match archetype needs |
+| Metric              | Value | Interpretation                                    |
+| ------------------- | ----- | ------------------------------------------------- |
+| Coverage            | 95.2% | Recommendations available for nearly all students |
+| Diversity           | 0.78  | Good variety in recommendations                   |
+| Archetype Alignment | 87.3% | Recommendations match archetype needs             |
 
 ## 4.4 Predictive Validation
 
@@ -277,10 +288,10 @@ We identified a concerning pattern: students who **appear active but are disenga
 
 Forum participation emerged as the **strongest differentiator** between archetypes:
 
-| Archetype | Avg Forum Posts | Pass Rate |
-|-----------|-----------------|-----------|
-| High Performer | 12.4 | 92% |
-| Disengaged At-Risk | 0.8 | 12% |
+| Archetype          | Avg Forum Posts | Pass Rate |
+| ------------------ | --------------- | --------- |
+| High Performer     | 12.4            | 92%       |
+| Disengaged At-Risk | 0.8             | 12%       |
 
 **Business Impact**: Encouraging forum participation could be the highest-ROI intervention.
 
@@ -293,17 +304,21 @@ Students who engaged in their **first 14 days** were **4.2x more likely** to com
 ## 5.2 Actionable Recommendations for Stakeholders
 
 ### For Students
+
 Our dashboard provides:
+
 - Personal archetype identification
 - Specific resource recommendations
 - Gap analysis vs. successful peers
 
 ### For Instructors
+
 - Class-level archetype distribution
 - Early warning alerts for at-risk students
 - Intervention priority rankings
 
 ### For Administrators
+
 - Course-level success pattern analysis
 - Resource effectiveness metrics
 - Predictive enrollment risk scoring
@@ -315,11 +330,13 @@ Our dashboard provides:
 ## 6.1 Current Limitations
 
 ### Data Limitations
+
 1. **Single Institution**: OULAD is from Open University UK; patterns may not generalize
 2. **Historical Data**: 2013-2014 data may not reflect current online learning behaviors
 3. **No Content Analysis**: We analyze engagement, not learning content quality
 
 ### Model Limitations
+
 1. **Cold Start Problem**: New students have no behavioral data for recommendations
 2. **Temporal Dynamics**: Model doesn't capture how students evolve over time
 3. **Causal Inference**: Correlations don't prove causation
@@ -327,17 +344,20 @@ Our dashboard provides:
 ## 6.2 Future Scope
 
 ### Short-term Improvements
+
 1. **Real-time Tracking**: Update archetypes as student behavior evolves
 2. **A/B Testing**: Validate recommendation effectiveness experimentally
 3. **Mobile App**: Push notifications for timely interventions
 
 ### Long-term Vision
+
 1. **Multi-modal Analysis**: Incorporate video lecture engagement, assignment text analysis
 2. **Transfer Learning**: Pre-train on OULAD, fine-tune for other institutions
 3. **Reinforcement Learning**: Optimize recommendation sequences over time
 4. **Explainable AI Enhancement**: Natural language explanations for recommendations
 
 ### Research Directions
+
 1. **Causal Discovery**: Use causal inference to move beyond correlations
 2. **Fairness Analysis**: Ensure recommendations don't perpetuate biases
 3. **Longitudinal Studies**: Track students across multiple courses
@@ -348,14 +368,14 @@ Our dashboard provides:
 
 ## 7.1 Technology Stack
 
-| Component | Technology |
-|-----------|------------|
-| Data Processing | Pandas, NumPy |
-| Machine Learning | Scikit-learn (GMM, NMF) |
-| Visualization | Plotly, Matplotlib, Seaborn |
-| Dashboard | Streamlit |
-| Deployment | Streamlit Cloud |
-| Version Control | Git, GitHub |
+| Component        | Technology                  |
+| ---------------- | --------------------------- |
+| Data Processing  | Pandas, NumPy               |
+| Machine Learning | Scikit-learn (GMM, NMF)     |
+| Visualization    | Plotly, Matplotlib, Seaborn |
+| Dashboard        | Streamlit                   |
+| Deployment       | Streamlit Cloud             |
+| Version Control  | Git, GitHub                 |
 
 ## 7.2 System Architecture
 
@@ -399,7 +419,7 @@ We built an end-to-end **Skill Gap Awareness System** that:
 ✅ Identifies 5 distinct student archetypes using GMM  
 ✅ Generates personalized recommendations using Matrix Factorization  
 ✅ Provides explainable insights through "Top Performer Wisdom"  
-✅ Delivers an interactive dashboard for students and educators  
+✅ Delivers an interactive dashboard for students and educators
 
 ## 8.2 The Bigger Picture
 
@@ -412,22 +432,18 @@ This project demonstrates that **machine learning can humanize online education*
 
 ## 8.3 Final Thoughts
 
-> *"The goal of education is not to increase the amount of knowledge but to create the possibilities for a child to invent and discover."* — Jean Piaget
+> _"The goal of education is not to increase the amount of knowledge but to create the possibilities for a child to invent and discover."_ — Jean Piaget
 
-Our system embodies this philosophy. We don't just predict who will fail—we show every student the path to success.
+Our system embodies this philosophy. We don't just predict who will fail - we show every student the path to success.
 
 ---
 
 ## References
 
-1. Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data*, 4, 170171.
-2. Drachsler, H., & Greller, W. (2016). Privacy and analytics: it's a DELICATE issue. *Proceedings of LAK'16*.
-3. Romero, C., & Ventura, S. (2010). Educational data mining: A review of the state of the art. *IEEE Transactions on Systems, Man, and Cybernetics*.
+1. Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. _Scientific Data_, 4, 170171.
+2. Drachsler, H., & Greller, W. (2016). Privacy and analytics: it's a DELICATE issue. _Proceedings of LAK'16_.
+3. Romero, C., & Ventura, S. (2010). Educational data mining: A review of the state of the art. _IEEE Transactions on Systems, Man, and Cybernetics_.
 
 ---
 
-**Word Count**: ~2,800 words | **Page Count**: 10 pages (when formatted)
-
----
-
-*Report prepared by Team: Dhruv Sharma (Leader), Yashwardhan Singh, Kartavya Panchal, Ojas Maheshwari, Tushar Shaw*
+_Report prepared by Team पंचतत्व 2.0: Dhruv Sharma (Leader), Yashwardhan Singh, Kartavya Panchal, Ojas Maheshwari, Tushar Shaw_
