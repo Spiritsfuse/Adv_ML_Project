@@ -4,8 +4,13 @@
 
 An intelligent learning analytics system that identifies student skill gaps and provides personalized recommendations using **Gaussian Mixture Models (GMM)** for clustering and **Matrix Factorization (MF)** for collaborative filtering.
 
-### 🌐 Live Demo
-> **[Skill Gap Awareness Dashboard](https://spiritsfuse-adv-ml-project.streamlit.app/)** - Try the interactive application!
+### 🌐 Live Demo & Quick Access
+
+| Resource | Link |
+|----------|------|
+| 🚀 **Live Dashboard** | [spiritsfuse-adv-ml-project.streamlit.app](https://spiritsfuse-adv-ml-project.streamlit.app/) |
+| 📓 **Open in Colab** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Spiritsfuse/Adv_ML_Project/blob/main/model.ipynb) |
+| 📄 **Project Report** | [Project_Report.md](Project_Report.md) |
 
 ---
 
