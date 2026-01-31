@@ -1,0 +1,3 @@
+archetype,at_risk_count,success_rate,primary_intervention,strategy,focus_activities,gap_magnitudes
+Talented but Inconsistent,815,90.35731187884525,Active Learning,More practice quizzes and interactive sessions,"['quiz', 'forumng', 'oucollaborate']","[0.06427078699324335, 0.053341759850137116, 0.034856313335477784]"
+Moderate Performer,6368,28.849162011173178,Content Engagement,Increase reading/viewing of course materials,"['quiz', 'oucontent', 'questionnaire']","[0.1470585818685924, 0.12065324700457314, 0.07951947639100504]"
